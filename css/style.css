@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html,body{
+    display: grid;
+    height: 100%;
+    place-items: center;
+    background: #664AFF;
+}
+
+.checkbox{
+    border-radius: 5px;
+    box-shadow: 2px 3px 3px rgba(0,0,0,0.3);
+    height: 80px;
+    width: 270px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    justify-content: space-between;
+    transition: ease;
+}
+
+.checkbox input{
+    position: relative;
+    height: 40px;
+    width: 90px;
+    outline: none;
+    background: #e6e6e6;
+    -webkit-appearance: none;
+    border-radius: 50px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+}
+
+input:checked{
+    background: #664AFF;
+}
+
+/* bola */
+.checkbox input:before{
+    background: linear-gradient(#fff, #f2f2f2, #e6e6e6, #d9d9d9);
+    height: 100%;
+    width: 40px;
+    left: 0;
+    position: absolute;
+    content: "";
+    border-radius: 50px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transform: scale(0.85);
+    transition: 0.3s ease;
+}
+
+input:checked:before{
+    left: 50px;
+}
+
+.checkbox .text:before{
+    /* margin-left: 10px; */
+    content: 'Desligado';
+    font-size: 25px;
+    font-weight: 500;
+    color: #bfbfbf;
+    transition: all 0.5s ease;
+}
+
+input:checked ~ .text:before{
+    content: 'Ligado';
+    font-size: 26px;
+    color: #664AFF;
+}
